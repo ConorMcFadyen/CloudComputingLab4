@@ -1,0 +1,100 @@
+{
+"properties": {
+"publicIPAllocationMethod": "Static",
+"idleTimeoutInMinutes": 10,
+"publicIPAddressVersion": "IPv4"
+},
+"sku": {
+"name": "Basic"
+},
+"location": "westeurope"
+}
+
+20.229.226.168
+-----------------------------------------
+Network interface 
+{
+"properties": {
+"ipConfigurations": [
+{
+"name": "newNetworkInterface",
+"properties": {
+"publicIPAddress": {
+"id": "/subscriptions/687cd4f2-d7b8-45f9-843f-e1b51f219295/resourceGroups/CloudComputingVM_group/providers/Microsoft.Network/publicIPAddresses/newIP"
+},
+"subnet": {
+"id": "/subscriptions/687cd4f2-d7b8-45f9-843f-e1b51f219295/resourceGroups/CloudComputingVM_group/providers/Microsoft.Network/virtualNetworks/newVirtualNetwork/subnets/default"
+}
+}
+}
+]
+},
+"location": "westeurope"
+}
+---------------------------------------------
+Ip address 
+{
+"properties": {
+"publicIPAllocationMethod": "Static",
+"idleTimeoutInMinutes": 10,
+"publicIPAddressVersion": "IPv4"
+},
+"sku": {
+"name": "Basic"
+},
+"location": "westeurope"
+}
+--------------------------------
+newVM
+
+{
+"id": "/subscriptions/687cd4f2-d7b8-45f9-843f-e1b51f219295/resourceGroups/CloudComputingVM_group/providers/Microsoft.Compute/virtualMachines/newVM",
+"type": "Microsoft.Compute/virtualMachines",
+"properties": {
+"osProfile": {
+"adminUsername": "conor",
+"secrets": [
+],
+"computerName": "newVM",
+"linuxConfiguration": {
+"ssh": {
+"publicKeys": [
+{
+"path": "/home/conor/.ssh/authorized_keys",
+
+
+"keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC3rPfKjlIGBSzxDnN+Lq6zY1tUxlgoUsvm+GDrS/LVYBp9WdkhJn8ceotMROEmFZbUjUMFUaNo+7+yqJEUyb9XJnUUkmkBmISOPbsguS7oEQ6uA6o6LvkISXGiQ1ty/+Ai7Qvn1Zpd89qeBWhZ2EiDsgj023feHJjB+T3WfRdxEu8+a2s67aGIDku4z0k5tIF8JHSJ5B3yZtJXdBm228V1MyrKkKk51gL8TY579+9FsH0odRCJdLKScVfc6gdV3mC2xG2/SeSnLp/6jp/ffcCYkPCxK7+V2FHP9MRVN6f3hCWIDavRgFYaaoKPrCTgvx+RFSiz+H5SblXZ3VhUE8qGADlw2kZozW/iLohbV/kYaTyJoJCbJKwcvf9EwdD19YJVbXcn3O6lVevssTG7JKQRmRnaTNfRaQ46t4isCFlFL1/7fAW4RzEMP2vUNpXHa9AZdRDFrBObS9Tx1nAtCYHSU/LRuzc7UN7giAkCSQU8nTjxpiEv3t0TRAeVLQbngzE= generated-by-azure"
+}
+]
+},
+"disablePasswordAuthentication": true
+}
+},
+"networkProfile": {
+"networkInterfaces": [
+{
+"id": "/subscriptions/687cd4f2-d7b8-45f9-843f-e1b51f219295/resourceGroups/CloudComputingVM_group/providers/Microsoft.Network/networkInterfaces/newNetworkInterface",
+"properties": {
+"primary": true
+}
+}
+]
+},
+"storageProfile": {
+"imageReference": {
+"sku": "16.04-LTS",
+"publisher": "Canonical",
+"version": "latest",
+"offer": "UbuntuServer"
+},
+"dataDisks": [
+]
+},
+"hardwareProfile": {
+"vmSize": "Standard_D1_v2"
+},
+"provisioningState": "Creating"
+},
+"name": "newVM",
+"location": "westeurope"
+}
